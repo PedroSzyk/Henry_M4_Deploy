@@ -1,4 +1,3 @@
-import Image from 'next/image';
 
 const AboutView = () => {
   return (
@@ -12,7 +11,7 @@ const AboutView = () => {
               <h2 className="text-subtitle text-primary mb-4">Our Story</h2>
               <p className="text-body text-secondary mb-4">
                 Welcome to Vintage Apple Store, your premier destination for classic Apple products. 
-                Founded in 2024 by a group of passionate Apple enthusiasts, we've dedicated ourselves 
+                Founded in 2024 by a group of passionate Apple enthusiasts, we&apos;ve dedicated ourselves 
                 to preserving and sharing the rich history of Apple Inc.
               </p>
               <p className="text-body text-secondary mb-4">
@@ -28,9 +27,9 @@ const AboutView = () => {
               At Vintage Apple Store, we strive to:
             </p>
             <ul className="list-disc list-inside text-body text-secondary mb-4 pl-4">
-              <li>Preserve the legacy of Apple's innovative designs</li>
+              <li>Preserve the legacy of Apple&apos;s innovative designs</li>
               <li>Provide authentic, high-quality vintage Apple products</li>
-              <li>Share our passion for Apple's history with fellow enthusiasts</li>
+              <li>Share our passion for Apple&apos;s history with fellow enthusiasts</li>
               <li>Offer a unique shopping experience for collectors and tech lovers alike</li>
             </ul>
           </div>

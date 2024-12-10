@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
@@ -51,6 +51,7 @@ const LoginComponent = () => {
         });
       }
     } catch (error) {
+      console.error("Login error:", error);
       setErrors({
         email: "",
         password: "An unexpected error occurred. Please try again later.",

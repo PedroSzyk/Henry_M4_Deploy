@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -52,6 +52,7 @@ const RegisterComponent = () => {
         });
       }
     } catch (error) {
+      console.error("Registration error:", error);
       setErrors({
         name: "",
         email: "",
@@ -98,7 +99,9 @@ const RegisterComponent = () => {
           disabled={isLoading}
         />
         {errors.email && (
-          <span className="text-red-500 text-sm mt-1 block">{errors.email}</span>
+          <span className="text-red-500 text-sm mt-1 block">
+            {errors.email}
+          </span>
         )}
       </div>
 
@@ -116,7 +119,9 @@ const RegisterComponent = () => {
           disabled={isLoading}
         />
         {errors.password && (
-          <span className="text-red-500 text-sm mt-1 block">{errors.password}</span>
+          <span className="text-red-500 text-sm mt-1 block">
+            {errors.password}
+          </span>
         )}
       </div>
 
@@ -134,7 +139,9 @@ const RegisterComponent = () => {
           disabled={isLoading}
         />
         {errors.address && (
-          <span className="text-red-500 text-sm mt-1 block">{errors.address}</span>
+          <span className="text-red-500 text-sm mt-1 block">
+            {errors.address}
+          </span>
         )}
       </div>
 
@@ -152,7 +159,9 @@ const RegisterComponent = () => {
           disabled={isLoading}
         />
         {errors.phone && (
-          <span className="text-red-500 text-sm mt-1 block">{errors.phone}</span>
+          <span className="text-red-500 text-sm mt-1 block">
+            {errors.phone}
+          </span>
         )}
       </div>
 
