@@ -3,7 +3,7 @@ import { getProductsById } from '@/helpers/product.helper';
 import ProductDetail from '@/views/ProductDetail/ProductDetail';
 
 const Detail = async ({ params }: { params: { productId: string } }) => {
-  const { productId } = await Promise.resolve(params);
+  const { productId } = params;
 
   if (!productId) {
     notFound();
