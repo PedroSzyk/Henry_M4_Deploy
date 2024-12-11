@@ -66,14 +66,17 @@ const CartComponent = () => {
               </button>
             </div>
           ))}
-          <div className="p-4 bg-gray-50">
+          <div className="p-6 bg-gray-50">
             <div className="flex justify-between items-center mb-4">
               <span className="text-primary text-lg font-bold">Total:</span>
               <span className="text-secondary text-lg font-bold">
                 ${calculateTotal()}
               </span>
             </div>
-            <button onClick={handleCart} className="button-primary">
+            <button
+              onClick={handleCart}
+              className="button-primary w-min py-2 px-4 text-center"
+            >
               Proceed to Checkout
             </button>
           </div>

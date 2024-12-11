@@ -3,14 +3,17 @@
 import Link from 'next/link'
 import { useState, useContext, useEffect, useRef } from 'react'
 import { UserContext } from "@/contexts/UserContext"
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logoutUser } = useContext(UserContext);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const handleLogout = () => {
     logoutUser();
+    router.push("/");
     setIsMenuOpen(false);
   };
 

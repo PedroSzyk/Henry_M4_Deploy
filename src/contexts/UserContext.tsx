@@ -1,7 +1,6 @@
 'use client'
 
 import { IOrder, IUser } from "@/interfaces/Types";
-import { useRouter } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
 
 interface IUserContextProps {
@@ -20,7 +19,6 @@ export const UserContext = createContext<IUserContextProps>({
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<IUser | null>(null);
-  const router = useRouter();
 
   useEffect(() => {
     if (user) {
@@ -49,9 +47,8 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const logoutUser = () => {
-    setUser(null);
     localStorage.removeItem("user");
-    router.push("/");
+    setUser(null);
   };
 
   return (
