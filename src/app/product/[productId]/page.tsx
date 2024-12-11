@@ -2,15 +2,16 @@ import { notFound } from 'next/navigation';
 import { getProductsById } from '@/helpers/product.helper';
 import ProductDetail from '@/views/ProductDetail/ProductDetail';
 
-const Detail = async ({ params }: { params: { productId: string } }) => {
-  const { productId } = await Promise.resolve(params);
+type DetailPageProps = Promise<{productId: string }>;
+const Detail = async ({ params }: {params: DetailPageProps }) => {
+  const { productId } = await params;
 
   if (!productId) {
     notFound();
   }
 
   try {
-    const product = await getProductsById(productId);
+    const product = await getProductsById(await productId);
     return <ProductDetail {...product} />;
   } catch (error: unknown) {
     if (error instanceof Error && error.message === 'Product not Found') {
